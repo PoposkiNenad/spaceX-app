@@ -4,7 +4,10 @@ export const styles = makeStyles((theme) => createStyles({
   root: {
     '& .item': {
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      '& .MuiPaper-root': {
+        width: '100%'
+      }
     }
   }
 }));

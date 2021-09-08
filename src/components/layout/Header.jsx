@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <AppBar position="static" className={classes.root}>
       <Toolbar>
-        <Link to="/">Home</Link>
+        <Link to="/">Rockets</Link>
         <Link to="/missions">Missions</Link>
       </Toolbar>
     </AppBar>

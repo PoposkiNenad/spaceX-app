@@ -1,10 +1,13 @@
+import { Grid } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
-import Rockets from '../components/Rockets'
 import { launchesService } from '../services/DataService'
+import { styles } from '../styles/RocketsStyle'
+import MissionCard from '../components/layout/MissionCard'
 
-export default function Missions(props) {
+export default function Missions() {
 
   const [launches, setLaunches] = useState([])
+  const classes = styles()
 
   useEffect(() => {
     launchesService().then((result) => {
@@ -17,11 +20,16 @@ export default function Missions(props) {
 
   return (
     <div>
-      {launches.map((launch)=>{
-        return(
-          <div key={launch.id}>{launch.name}</div>
-        )
-      })}
+      <Grid container spacing={2} className={classes.root}>
+        {launches && launches.map((mission) => {
+          return (
+            <Grid className="item" key={mission.id} item xs={12} sm={6} lg={3}>
+              <MissionCard mission={mission} />
+            </Grid>
+          )
+        })}
+      </Grid>
+      )
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
+import RocketsCard from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -10,7 +10,7 @@ export default function ImgMediaCard(props) {
   const classes = styles();
 
   return (
-    <Card className={classes.root}>
+    <RocketsCard className={classes.root}>
       <CardActionArea href={props.rocket.wikipedia}>
         <CardMedia
           component="img"
@@ -28,6 +28,6 @@ export default function ImgMediaCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-    </Card>
+    </RocketsCard>
   );
 }
